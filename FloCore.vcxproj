@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ext\pugixml\pugi\pugixml.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\tools\FileReader.cpp" />
+    <ClCompile Include="src\tools\Threadpool.cpp" />
+    <ClCompile Include="src\tools\Trie.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ext\pugixml\pugi\pugiconfig.hpp" />
+    <ClInclude Include="ext\pugixml\pugi\pugixml.hpp" />
+    <ClInclude Include="res\resource.h" />
+    <ClInclude Include="src\tools\FileReader.h" />
+    <ClInclude Include="src\tools\Threadpool.h" />
+    <ClInclude Include="src\tools\Trie.h" />
+    <ClInclude Include="src\tools\VfCommon.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SConstruct" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="res\FloCore.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\VF_Logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="ext\imgui-node-editor\misc\crude_json.natvis" />
+    <Natvis Include="ext\imgui-node-editor\misc\imgui_node_editor.natvis" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>FloCore</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectGuid>{5FCF225C-5302-4FEA-8F92-4CBBADE1719D}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <NMakeBuildCommandLine>scons arch=x32 cfg=dbg</NMakeBuildCommandLine>
+    <NMakeOutput>FloCore.exe</NMakeOutput>
+    <NMakeCleanCommandLine>scons -c</NMakeCleanCommandLine>
+    <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <OutDir>$(SolutionDir)bin\</OutDir>
+    <IntDir>$(SolutionDir)bin\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <NMakeBuildCommandLine>scons arch=x64 cfg=dbg vtk=dynamic</NMakeBuildCommandLine>
+    <NMakeOutput></NMakeOutput>
+    <NMakeCleanCommandLine>scons -c</NMakeCleanCommandLine>
+    <NMakePreprocessorDefinitions>_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <OutDir>$(SolutionDir)bin\</OutDir>
+    <IntDir>$(SolutionDir)bin\</IntDir>
+    <ExecutablePath>$(SolutionDir)/bin;$(VC_ExecutablePath_x64);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(MSBuild_ExecutablePath);$(FxCopDir);$(PATH);</ExecutablePath>
+    <IncludePath>$(SolutionDir)/ext/geos/include/geos;$(SolutionDir)/ext/geos/include;$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)/src;$(SolutionDir)/src/plugins/rastering_engine;$(SolutionDir)/src/plugins;$(SolutionDir)/src/ui;$(SolutionDir)/src/geometry;$(SolutionDir)/src/tools;$(SolutionDir)/src/project;$(SolutionDir)/ext/imgui-node-editor;$(SolutionDir)/ext/imgui/include;$(SolutionDir)/ext/glm;$(SolutionDir)/ext/glfw/include;$(SolutionDir)/ext/glad/include;$(SolutionDir)/ext/stb;$(SolutionDir)/ext/libxml2/built/dbg/include/libxml2;$(SolutionDir)/ext/vtk/include/dbg/static;D:\test_VTK\Rendering\OpenGL2;$(SolutionDir)/ext/pugixml;$(IncludePath)</IncludePath>
+    <SourcePath>$(SolutionDir)/ext/geos/include/geos;$(SolutionDir)\ext\geos\bin;$(SolutionDir)/ext/pugixml/pugi;$(SolutionDir)/ext/imgui-node-editor;$(SolutionDir)/ext/imgui/include/imgui;$(VC_SourcePath);$(SolutionDir)/src;$(SolutionDir)/ext/vtk/inlcude/dbg/static/vtk;$(SolutionDir)/ext/glad/src;D:\test_VTK\Rendering\OpenGL2;D:\test_VTK\Rendering\External;D:\test_VTK\Rendering\Core;D:\test_VTK\Rendering\ContextOpenGL2;$(SourcePath)</SourcePath>
+    <LibraryPath>$(SolutionDir)/ext/libxml2/built/dbg/lib;$(SolutionDir)\ext\vtk\lib\dbg\static;$(SolutionDir)/ext/glfw/lib-vc2019;$(LibraryPath)</LibraryPath>
+    <AdditionalOptions>/std:c++latest</AdditionalOptions>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <NMakeBuildCommandLine>scons arch=x32 cfg=rel</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>scons -c</NMakeCleanCommandLine>
+    <NMakePreprocessorDefinitions>WIN32;NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeOutput>$(SolutionDir)bin\FloCore.exe</NMakeOutput>
+    <OutDir>$(SolutionDir)bin\</OutDir>
+    <IntDir>$(SolutionDir)bin\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <NMakeBuildCommandLine>scons arch=x64 cfg=rel vtk=dynamic</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>scons -c</NMakeCleanCommandLine>
+    <NMakePreprocessorDefinitions>NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <OutDir>$(SolutionDir)bin\</OutDir>
+    <IntDir>$(SolutionDir)bin\</IntDir>
+    <NMakeOutput>$(SolutionDir)bin\FloCore.exe</NMakeOutput>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)/src;$(SolutionDir)/ext/pugixml;$(IncludePath)</IncludePath>
+    <ExecutablePath>$(SolutionDir)/bin;$(VC_ExecutablePath_x64);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(MSBuild_ExecutablePath);$(FxCopDir);$(PATH);</ExecutablePath>
+    <SourcePath>$(SolutionDir)/ext/pugixml/pugi;$(VC_SourcePath);$(SolutionDir)/src;$(SourcePath)</SourcePath>
+    <AdditionalOptions>/std:c++latest</AdditionalOptions>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <BuildLog>
+      <Path>$(SolutionDir)bin\$(MSBuildProjectName).log</Path>
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <BuildLog>
+      <Path>$(SolutionDir)bin\$(MSBuildProjectName).log</Path>
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <BuildLog>
+      <Path>$(SolutionDir)bin\$(MSBuildProjectName).log</Path>
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <BuildLog>
+      <Path>$(SolutionDir)bin\$(MSBuildProjectName).log</Path>
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

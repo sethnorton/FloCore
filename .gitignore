@@ -1,0 +1,87 @@
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+!bin/geos_c.dll
+!bin/geos.dll
+!bin/ext/geos.dll
+!bin/ext/geos_c.dll
+!bin/ext/RasteringEngine.exe
+!bin/ext/Converter.exe
+*.exe
+*.o
+*.obj
+*.so
+*.un~
+
+# Project extras #
+##################
+output
+CLI
+STL
+bin
+*.json
+*.vfcfg
+*.vfproj
+*.bak
+*.ini
+*.png
+*.swp
+*.cmake
+*.in
+ext/vtk/html
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+*.pdb
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.sconsign.dblite
+.Spotlight-V100
+.Trashes
+.vs
+ehthumbs.db
+Thumbs.db
+*.vcxproj.user
+*.vspx
+*.psess
+
+# Specific incompatible files#
+##############################
+ext/pugixml-1.9/pugixml.nativecodeanalysis.xml
+
+# Auto-Generated Files #
+########################
+src/VfVersion.h
+src/ui/shaders.h
+res/version.rc2
+res/ConfigEditor.res
+res/RCa*
+
+# External Libraries #
+######################
+ext/process-control
+ext/vtk/lib/*/static
+ext/libxml2
+!ext/libxml2/built/

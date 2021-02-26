@@ -9,9 +9,9 @@ The general execution flow might be:
 3. Wait for client connection.
 4. When client connects, send list of available components.
 5. Receive dependency graph or sub-graph from client.
-6. Transfer all data URIs that are attached to the dependency graph to the appropriate compute units.
+6. Transfer all data from URIs that are attached to the dependency graph to the appropriate compute units.
 7. Start component executables (could map many components to one executable with flags).
 8. Track progress and respond to any client requests about progress
 9. Collect results and wait for client to request.
 10. Transfer results back to client.
-11. Goto 4.
+11. Goto 3.

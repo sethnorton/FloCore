@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Ext Libraries">
+      <UniqueIdentifier>{ed9e65b1-9e17-4c0c-82df-10d0feca7021}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\tools">
+      <UniqueIdentifier>{381ee06e-f30b-47a7-9483-83a2efddf417}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{ecc0782f-bd7f-4e4f-8ae7-cb70594c4aa5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ext Libraries\pugixml">
+      <UniqueIdentifier>{8f195fad-cf39-4e08-93a5-cf2e6c86f9d4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tools\Trie.cpp">
+      <Filter>Source Files\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tools\FileReader.cpp">
+      <Filter>Source Files\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tools\Threadpool.cpp">
+      <Filter>Source Files\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\pugixml\pugi\pugixml.cpp">
+      <Filter>Ext Libraries\pugixml</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\tools\Trie.h">
+      <Filter>Source Files\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="src\tools\FileReader.h">
+      <Filter>Source Files\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="res\resource.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="src\tools\Threadpool.h">
+      <Filter>Source Files\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="src\tools\VfCommon.h">
+      <Filter>Source Files\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\pugixml\pugi\pugiconfig.hpp">
+      <Filter>Ext Libraries\pugixml</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\pugixml\pugi\pugixml.hpp">
+      <Filter>Ext Libraries\pugixml</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SConstruct">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\VF_Logo.ico">
+      <Filter>Resources</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="ext\imgui-node-editor\misc\imgui_node_editor.natvis">
+      <Filter>Resources</Filter>
+    </Natvis>
+    <Natvis Include="ext\imgui-node-editor\misc\crude_json.natvis">
+      <Filter>Resources</Filter>
+    </Natvis>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="res\FloCore.rc">
+      <Filter>Resources</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
